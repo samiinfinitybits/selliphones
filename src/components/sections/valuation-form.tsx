@@ -76,38 +76,7 @@ export function ValuationForm() {
     <section id="quote" className="scroll-mt-24 py-20 sm:py-28">
       <Container>
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-14">
-          {/* Left column — pitch + WhatsApp alternative */}
-          <div className="lg:col-span-5">
-            <p className="label-mono text-accent">04 — Instant valuation</p>
-            <h2 className="font-display mt-3 text-4xl leading-[0.95] sm:text-5xl lg:text-6xl">
-              Get your number in 60 seconds.
-            </h2>
-            <p className="mt-5 max-w-md text-ivory/65">
-              Fill this in and our team sends a confirmed quote over WhatsApp,
-              then we arrange free doorstep pickup. No account, no spam, no
-              obligation.
-            </p>
-
-            <div className="mt-8 border border-ivory/12 bg-ink-800 p-6">
-              <p className="label-mono text-ivory/45">Hate forms?</p>
-              <p className="mt-2 text-ivory/80">
-                Send us a message and a photo of your phone — we&rsquo;ll quote
-                you right there in the chat.
-              </p>
-              <a
-                href={waMessage}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center gap-2 rounded-sm border border-accent bg-accent/10 px-4 py-3 text-sm font-semibold text-accent transition-colors hover:bg-accent hover:text-ink"
-              >
-                <WhatsappIcon className="h-4 w-4" />
-                Quote me on WhatsApp instead
-              </a>
-            </div>
-          </div>
-
-          {/* Right column — form / success state */}
-          <div className="lg:col-span-7">
+        <div className="lg:col-span-7">
             <AnimatePresence mode="wait">
               {status === "success" ? (
                 <SuccessState key="success" onReset={() => setStatus("idle")} />
@@ -152,7 +121,7 @@ export function ValuationForm() {
                     <Field label="Model" error={errors.model?.message}>
                       <input
                         {...register("model")}
-                        placeholder="e.g. iPhone 15 Pro"
+                        placeholder="e.g. iPhone 15 Pro / Samsung Galaxy S23"
                         className={inputCls}
                       />
                     </Field>
@@ -284,6 +253,38 @@ export function ValuationForm() {
               )}
             </AnimatePresence>
           </div>
+          {/* Left column — pitch + WhatsApp alternative */}
+          <div className="lg:col-span-5">
+            <p className="label-mono text-accent">04 — Instant valuation</p>
+            <h2 className="font-display mt-3 text-4xl leading-[0.95] sm:text-5xl lg:text-6xl">
+              Get your number in 60 seconds.
+            </h2>
+            <p className="mt-5 max-w-md text-ivory/65">
+              Fill this in and our team sends a confirmed quote over WhatsApp,
+              then we arrange free doorstep pickup. No account, no spam, no
+              obligation.
+            </p>
+
+            <div className="mt-8 border border-ivory/12 bg-ink-800 p-6">
+              <p className="label-mono text-ivory/45">Hate forms?</p>
+              <p className="mt-2 text-ivory/80">
+                Send us a message and a photo of your phone — we&rsquo;ll quote
+                you right there in the chat.
+              </p>
+              <a
+                href={waMessage}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center gap-2 rounded-sm border border-accent bg-accent/10 px-4 py-3 text-sm font-semibold text-accent transition-colors hover:bg-accent hover:text-ink"
+              >
+                <WhatsappIcon className="h-4 w-4" />
+                Quote me on WhatsApp instead
+              </a>
+            </div>
+          </div>
+
+          {/* Right column — form / success state */}
+        
         </div>
       </Container>
     </section>

@@ -123,47 +123,45 @@ export function Hero() {
             </motion.ul>
           </div>
 
-          {/* Offset receipt-style quote panel — breaks the grid */}
+          {/* Offset panel — breaks the grid; no public price figures */}
           <div className="lg:col-span-5">
             <motion.div
               initial={reduce ? false : { opacity: 0, y: 24, rotate: -1.5 }}
               animate={{ opacity: 1, y: 0, rotate: -1.5 }}
               transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-              className="relative mx-auto max-w-sm lg:mt-6 lg:rotate-[-1.5deg]"
+              className="relative mx-auto max-w-lg lg:mt-6 lg:rotate-[-1.5deg]"
             >
               <div className="border border-ivory/15 bg-ink-800 p-6 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.9)]">
                 <div className="flex items-center justify-between border-b border-dashed border-ivory/20 pb-4">
-                  <span className="label-mono text-ivory/50">Sample quote</span>
-                  <span className="label-mono text-accent">Live</span>
+                  <span className="label-mono text-ivory/50">Instant valuation</span>
+                  {/* <span className="label-mono text-accent">~60 sec</span> */}
                 </div>
 
-                <div className="py-5">
-                  <p className="font-display text-2xl">iPhone 15 Pro</p>
-                  <p className="mt-1 text-sm text-ivory/50">
-                    256GB · Good condition · Dubai Marina
-                  </p>
-                </div>
+                <p className="py-5 font-display text-2xl leading-tight">
+                  Your personal quote — after we know your device.
+                </p>
 
-                <dl className="space-y-2.5 border-t border-dashed border-ivory/20 pt-4 font-mono text-sm">
-                  <Row k="Base offer" v="AED 2,850" />
-                  <Row k="Battery 92%" v="+ AED 120" />
-                  <Row k="Original box" v="+ AED 80" />
-                </dl>
+                <ul className="space-y-3 border-t border-dashed border-ivory/20 pt-4 text-sm text-ivory/75">
+                  <li className="flex gap-3">
+                    <span className="label-mono shrink-0 text-accent">01</span>
+                    <span>Model, storage &amp; condition</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="label-mono shrink-0 text-accent">02</span>
+                    <span>We confirm by WhatsApp or at your door</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="label-mono shrink-0 text-accent">03</span>
+                    <span>Cash or transfer when you accept — no fees</span>
+                  </li>
+                </ul>
 
-                <div className="mt-4 flex items-end justify-between border-t border-ivory/20 pt-4">
-                  <span className="label-mono text-ivory/50">You get</span>
-                  <span className="font-display text-4xl text-accent">
-                    AED 3,050
-                  </span>
-                </div>
-
-                <p className="mt-4 text-center text-xs text-ivory/40">
-                  Paid in cash at your door · No fees, ever
+                <p className="mt-6 border-t border-ivory/20 pt-4 text-center text-xs text-ivory/45">
+                  Every phone is different. We quote yours individually.
                 </p>
               </div>
-              {/* pinned tag */}
               <div className="absolute -right-3 -top-3 rotate-6 bg-accent px-2.5 py-1 label-mono text-[0.6rem] font-bold text-ink">
-                Real prices
+                No obligation
               </div>
             </motion.div>
           </div>
@@ -187,15 +185,6 @@ export function Hero() {
         </div>
       </div>
     </section>
-  );
-}
-
-function Row({ k, v }: { k: string; v: string }) {
-  return (
-    <div className="flex justify-between text-ivory/70">
-      <dt>{k}</dt>
-      <dd className="text-ivory">{v}</dd>
-    </div>
   );
 }
 
