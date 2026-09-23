@@ -30,27 +30,25 @@ export function HowItWorks() {
   return (
     <section
       id="how-it-works"
-      className="scroll-mt-24 border-t border-ivory/10 bg-ink-800 py-20 sm:py-28"
+      className="scroll-mt-24 border-t border-ink/10 bg-paper py-20 sm:py-28"
     >
       <Container>
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
-          {/* Sticky left rail — the signature pinned element */}
           <div className="lg:col-span-5">
             <div className="lg:sticky lg:top-28">
-              <p className="label-mono text-accent">02 — How it works</p>
+              <p className="label-mono text-accent-ink">02 — How it works</p>
               <h2 className="font-display mt-3 text-4xl sm:text-5xl lg:text-6xl">
                 Three steps.
                 <br />
                 No catch.
               </h2>
-              <p className="mt-5 max-w-sm text-ivory/60">
+              <p className="mt-5 max-w-sm text-ink/60">
                 From &ldquo;how much?&rdquo; to money in your pocket. Most of
                 our customers are done before their coffee gets cold.
               </p>
 
-              {/* progress rail */}
               <div className="mt-10 hidden items-center gap-4 lg:flex">
-                <div className="relative h-40 w-[2px] bg-ivory/10">
+                <div className="relative h-40 w-[2px] bg-ink/10">
                   <motion.div
                     className="absolute left-0 top-0 w-full origin-top bg-accent"
                     style={{ scaleY: progress, height: "100%" }}
@@ -61,7 +59,7 @@ export function HowItWorks() {
                     <div
                       key={s.n}
                       className={`label-mono transition-colors duration-300 ${
-                        i === active ? "text-accent" : "text-ivory/30"
+                        i === active ? "text-accent-ink" : "text-ink/30"
                       }`}
                     >
                       {s.n} · {s.title}
@@ -72,7 +70,6 @@ export function HowItWorks() {
             </div>
           </div>
 
-          {/* Steps */}
           <div ref={ref} className="lg:col-span-7">
             <ol className="space-y-6 sm:space-y-10">
               {steps.map((s, i) => {
@@ -84,16 +81,16 @@ export function HowItWorks() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                    className="relative border border-ivory/12 bg-ink p-7 sm:p-9"
+                    className="relative border border-ink/12 bg-surface p-7 shadow-[3px_3px_0_0_rgba(20,20,15,0.05)] sm:p-9"
                   >
                     <div className="flex items-start justify-between gap-4">
-                      <span className="font-display text-6xl text-ivory/15 sm:text-7xl">
+                      <span className="font-display text-6xl text-ink/10 sm:text-7xl">
                         {s.n}
                       </span>
-                      <Icon className="h-10 w-10 shrink-0 text-accent" />
+                      <Icon className="h-10 w-10 shrink-0 text-accent-ink" />
                     </div>
                     <h3 className="font-display mt-4 text-3xl">{s.title}</h3>
-                    <p className="mt-3 max-w-md text-ivory/65">{s.body}</p>
+                    <p className="mt-3 max-w-md text-ink/65">{s.body}</p>
                   </motion.li>
                 );
               })}

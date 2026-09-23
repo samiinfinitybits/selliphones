@@ -6,7 +6,7 @@ import { cn } from "@/lib/cn";
  */
 export function Wordmark({ className }: { className?: string }) {
   return (
-    <span className={cn("flex items-center gap-2 text-ivory", className)}>
+    <span className={cn("flex items-center gap-2 text-ink", className)}>
       <svg
         viewBox="0 0 28 28"
         className="h-full w-auto"
@@ -37,7 +37,7 @@ export function Wordmark({ className }: { className?: string }) {
         />
       </svg>
       <span className="font-display text-[1.35rem] font-extrabold leading-none tracking-tight">
-        selliphones<span className="text-accent">.</span>
+        selliphones<span className="text-accent-ink">.</span>
       </span>
     </span>
   );

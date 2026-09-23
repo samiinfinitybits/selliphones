@@ -5,13 +5,13 @@ import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import {
   WhatsappIcon,
-  ArrowIcon,
+  PhoneIcon,
   VanIcon,
   CashIcon,
   ShieldIcon,
   BoltIcon,
 } from "@/components/ui/icons";
-import { waLink } from "@/lib/site";
+import { site, waLink } from "@/lib/site";
 
 const trust = [
   { icon: VanIcon, label: "Free doorstep pickup" },
@@ -37,14 +37,13 @@ export function Hero() {
   const reduce = useReducedMotion();
 
   return (
-    <section id="top" className="relative overflow-hidden pt-14 sm:pt-20">
-      {/* faint grid texture — not a gradient blob */}
+    <section id="top" className="relative overflow-hidden bg-paper pt-14 sm:pt-20">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.05]"
+        className="pointer-events-none absolute inset-0 opacity-[0.06]"
         style={{
           backgroundImage:
-            "linear-gradient(var(--color-ivory) 1px, transparent 1px), linear-gradient(90deg, var(--color-ivory) 1px, transparent 1px)",
+            "linear-gradient(var(--color-ink) 1px, transparent 1px), linear-gradient(90deg, var(--color-ink) 1px, transparent 1px)",
           backgroundSize: "64px 64px",
           maskImage: "radial-gradient(120% 90% at 50% 0%, #000 40%, transparent 80%)",
         }}
@@ -52,13 +51,12 @@ export function Hero() {
 
       <Container className="relative">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-6">
-          {/* Headline block — deliberately spans 7 cols, left-aligned */}
           <div className="lg:col-span-7">
             <motion.p
               initial={reduce ? false : { opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="label-mono text-accent"
+              className="label-mono text-accent-ink"
             >
               Dubai phone buyback · est. Selliphones
             </motion.p>
@@ -68,7 +66,7 @@ export function Hero() {
               <RevealLine delay={0.13}>
                 <span className="ink-underline">cash out</span>.
               </RevealLine>
-              <RevealLine delay={0.21} className="text-ivory-dim">
+              <RevealLine delay={0.21} className="text-ink-dim">
                 We drive to you.
               </RevealLine>
             </h1>
@@ -77,7 +75,7 @@ export function Hero() {
               initial={reduce ? false : { opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-7 max-w-xl text-lg text-ivory/70 sm:text-xl"
+              className="mt-7 max-w-xl text-lg text-ink/70 sm:text-xl"
             >
               Sell your iPhone or Samsung for a fair, upfront price. Free
               doorstep pickup anywhere in Dubai, a data wipe you can watch, and
@@ -90,9 +88,9 @@ export function Hero() {
               transition={{ duration: 0.6, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
               className="mt-9 flex flex-col gap-3 sm:flex-row"
             >
-              <Button href="#quote" variant="accent">
-                Get my instant quote
-                <ArrowIcon className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+              <Button href={`tel:${site.phoneRaw}`} variant="accent">
+                <PhoneIcon className="h-4 w-4" />
+                Call {site.phoneDisplay}
               </Button>
               <Button
                 href={waLink("Hi Selliphones — I'd like a quote for my phone.")}
@@ -105,17 +103,16 @@ export function Hero() {
               </Button>
             </motion.div>
 
-            {/* Trust strip */}
             <motion.ul
               initial={reduce ? false : { opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.55 }}
-              className="mt-10 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-ivory/10 pt-6 sm:max-w-xl md:grid-cols-4"
+              className="mt-10 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-ink/10 pt-6 sm:max-w-xl md:grid-cols-4"
             >
               {trust.map(({ icon: Icon, label }) => (
                 <li key={label} className="flex items-start gap-2.5">
-                  <Icon className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
-                  <span className="text-[0.82rem] leading-tight text-ivory/80">
+                  <Icon className="mt-0.5 h-5 w-5 shrink-0 text-accent-ink" />
+                  <span className="text-[0.82rem] leading-tight text-ink/80">
                     {label}
                   </span>
                 </li>
@@ -123,7 +120,6 @@ export function Hero() {
             </motion.ul>
           </div>
 
-          {/* Offset panel — breaks the grid; no public price figures */}
           <div className="lg:col-span-5">
             <motion.div
               initial={reduce ? false : { opacity: 0, y: 24, rotate: -1.5 }}
@@ -131,32 +127,31 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
               className="relative mx-auto max-w-lg lg:mt-6 lg:rotate-[-1.5deg]"
             >
-              <div className="border border-ivory/15 bg-ink-800 p-6 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.9)]">
-                <div className="flex items-center justify-between border-b border-dashed border-ivory/20 pb-4">
-                  <span className="label-mono text-ivory/50">Instant valuation</span>
-                  {/* <span className="label-mono text-accent">~60 sec</span> */}
+              <div className="border border-ink/15 bg-surface p-6 shadow-[5px_5px_0_0_rgba(20,20,15,0.08)]">
+                <div className="flex items-center justify-between border-b border-dashed border-ink/20 pb-4">
+                  <span className="label-mono text-ink/50">Instant valuation</span>
                 </div>
 
                 <p className="py-5 font-display text-2xl leading-tight">
                   Your personal quote — after we know your device.
                 </p>
 
-                <ul className="space-y-3 border-t border-dashed border-ivory/20 pt-4 text-sm text-ivory/75">
+                <ul className="space-y-3 border-t border-dashed border-ink/20 pt-4 text-sm text-ink/75">
                   <li className="flex gap-3">
-                    <span className="label-mono shrink-0 text-accent">01</span>
+                    <span className="label-mono shrink-0 text-accent-ink">01</span>
                     <span>Model, storage &amp; condition</span>
                   </li>
                   <li className="flex gap-3">
-                    <span className="label-mono shrink-0 text-accent">02</span>
+                    <span className="label-mono shrink-0 text-accent-ink">02</span>
                     <span>We confirm by WhatsApp or at your door</span>
                   </li>
                   <li className="flex gap-3">
-                    <span className="label-mono shrink-0 text-accent">03</span>
+                    <span className="label-mono shrink-0 text-accent-ink">03</span>
                     <span>Cash or transfer when you accept — no fees</span>
                   </li>
                 </ul>
 
-                <p className="mt-6 border-t border-ivory/20 pt-4 text-center text-xs text-ivory/45">
+                <p className="mt-6 border-t border-ink/20 pt-4 text-center text-xs text-ink/45">
                   Every phone is different. We quote yours individually.
                 </p>
               </div>
@@ -168,17 +163,16 @@ export function Hero() {
         </div>
       </Container>
 
-      {/* Device marquee */}
-      <div className="mt-16 border-y border-ivory/10 py-4 sm:mt-24">
+      <div className="mt-16 border-y border-ink/10 py-4 sm:mt-24">
         <div className="marquee-mask flex overflow-hidden">
           <div className="animate-marquee flex shrink-0 items-center gap-10 pr-10">
             {[...models, ...models].map((m, i) => (
               <span
                 key={i}
-                className="label-mono whitespace-nowrap text-ivory/40"
+                className="label-mono whitespace-nowrap text-ink/40"
               >
                 {m}
-                <span className="ml-10 text-accent/50">/</span>
+                <span className="ml-10 text-accent-ink/40">/</span>
               </span>
             ))}
           </div>

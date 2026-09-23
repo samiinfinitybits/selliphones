@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Manrope, Space_Mono } from "next/font/google";
 import "./globals.css";
+import { FloatingContact } from "@/components/sections/floating-contact";
 import { site } from "@/lib/site";
 
 const bricolage = Bricolage_Grotesque({
@@ -58,8 +59,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0b0b0d",
-  colorScheme: "dark",
+  themeColor: "#f6f2e8",
+  colorScheme: "light",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -68,7 +69,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${bricolage.variable} ${manrope.variable} ${spaceMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-ink text-ivory">{children}</body>
+      <body className="min-h-full bg-paper text-ink">
+        {children}
+        <FloatingContact />
+      </body>
     </html>
   );
 }

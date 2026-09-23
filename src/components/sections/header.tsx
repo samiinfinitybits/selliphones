@@ -24,7 +24,7 @@ export function Header() {
       className={cn(
         "sticky top-0 z-50 transition-colors duration-300",
         scrolled
-          ? "border-b border-ivory/10 bg-ink/85 backdrop-blur-md"
+          ? "border-b border-ink/10 bg-paper/85 backdrop-blur-md"
           : "border-b border-transparent bg-transparent",
       )}
     >
@@ -38,7 +38,7 @@ export function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="label-mono text-[0.7rem] text-ivory/70 transition-colors hover:text-ivory"
+              className="label-mono text-[0.7rem] text-ink/70 transition-colors hover:text-ink"
             >
               {item.label}
             </a>
@@ -48,7 +48,7 @@ export function Header() {
         <div className="flex items-center gap-2 sm:gap-3">
           <a
             href={`tel:${site.phoneRaw}`}
-            className="hidden items-center gap-2 text-sm font-medium text-ivory/80 transition-colors hover:text-ivory md:flex"
+            className="hidden items-center gap-2 text-sm font-medium text-ink/80 transition-colors hover:text-ink md:flex"
           >
             <PhoneIcon className="h-4 w-4" />
             {site.phoneDisplay}
@@ -69,18 +69,18 @@ export function Header() {
             aria-label="Toggle menu"
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="flex h-10 w-10 items-center justify-center rounded-sm border border-ivory/20 lg:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-sm border border-ink/20 lg:hidden"
           >
             <span className="relative block h-3 w-4">
               <span
                 className={cn(
-                  "absolute left-0 h-[1.5px] w-4 bg-ivory transition-all",
+                  "absolute left-0 h-[1.5px] w-4 bg-ink transition-all",
                   open ? "top-1.5 rotate-45" : "top-0",
                 )}
               />
               <span
                 className={cn(
-                  "absolute bottom-0 left-0 h-[1.5px] w-4 bg-ivory transition-all",
+                  "absolute bottom-0 left-0 h-[1.5px] w-4 bg-ink transition-all",
                   open ? "bottom-1.5 -rotate-45" : "bottom-0",
                 )}
               />
@@ -96,7 +96,7 @@ export function Header() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="overflow-hidden border-t border-ivory/10 bg-ink lg:hidden"
+            className="overflow-hidden border-t border-ink/10 bg-paper lg:hidden"
           >
             <Container className="flex flex-col gap-1 py-4">
               {nav.map((item) => (
@@ -104,14 +104,14 @@ export function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="border-b border-ivory/5 py-3 font-display text-2xl text-ivory"
+                  className="border-b border-ink/5 py-3 font-display text-2xl text-ink"
                 >
                   {item.label}
                 </a>
               ))}
               <a
                 href={`tel:${site.phoneRaw}`}
-                className="flex items-center gap-2 py-3 text-ivory/70"
+                className="flex items-center gap-2 py-3 text-ink/70"
               >
                 <PhoneIcon className="h-4 w-4" />
                 {site.phoneDisplay}

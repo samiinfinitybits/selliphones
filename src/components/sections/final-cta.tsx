@@ -2,8 +2,8 @@
 
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
-import { ArrowIcon, WhatsappIcon } from "@/components/ui/icons";
-import { waLink } from "@/lib/site";
+import { ArrowIcon, PhoneIcon, WhatsappIcon } from "@/components/ui/icons";
+import { site, waLink } from "@/lib/site";
 
 export function FinalCta() {
   return (
@@ -17,14 +17,10 @@ export function FinalCta() {
             </h2>
           </div>
           <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
-            <Button
-              href="#quote"
-              variant="ghost"
-              className="border border-ink bg-ink text-ivory hover:bg-ink-800 hover:text-accent"
-            >
-              Get my instant quote
-              <ArrowIcon className="h-4 w-4" />
-            </Button>
+          <Button href={`tel:${site.phoneRaw}`} variant="accent">
+                <PhoneIcon className="h-4 w-4" />
+                Call {site.phoneDisplay}
+              </Button>
             <a
               href={waLink("Hi Selliphones — I'd like a quote for my phone.")}
               target="_blank"

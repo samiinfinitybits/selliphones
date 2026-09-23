@@ -73,7 +73,7 @@ export function ValuationForm() {
   );
 
   return (
-    <section id="quote" className="scroll-mt-24 py-20 sm:py-28">
+    <section id="quote" className="scroll-mt-24 bg-paper py-20 sm:py-28">
       <Container>
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-14">
         <div className="lg:col-span-7">
@@ -88,7 +88,7 @@ export function ValuationForm() {
                   exit={{ opacity: 0 }}
                   onSubmit={handleSubmit(onSubmit)}
                   noValidate
-                  className="border border-ivory/12 bg-ink-800 p-6 sm:p-8"
+                  className="border border-ink/12 bg-surface p-6 shadow-[3px_3px_0_0_rgba(20,20,15,0.05)] sm:p-8"
                 >
                   {/* Honeypot */}
                   <input
@@ -136,7 +136,7 @@ export function ValuationForm() {
                             Select…
                           </option>
                           {storageOptions.map((s) => (
-                            <option key={s} value={s} className="bg-ink">
+                            <option key={s} value={s} className="bg-surface">
                               {s}
                             </option>
                           ))}
@@ -159,11 +159,11 @@ export function ValuationForm() {
                             "flex flex-col items-start rounded-sm border p-3 text-left transition-colors",
                             condition === c.id
                               ? "border-accent bg-accent/10"
-                              : "border-ivory/15 hover:border-ivory/40",
+                              : "border-ink/15 hover:border-ink/40",
                           )}
                         >
                           <span className="text-sm font-semibold">{c.label}</span>
-                          <span className="mt-0.5 text-[0.7rem] text-ivory/45">
+                          <span className="mt-0.5 text-[0.7rem] text-ink/45">
                             {c.hint}
                           </span>
                         </button>
@@ -171,7 +171,7 @@ export function ValuationForm() {
                     </div>
                   </Field>
 
-                  <div className="my-6 h-px bg-ivory/10" />
+                  <div className="my-6 h-px bg-ink/10" />
 
                   <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                     <Field label="Full name" error={errors.name?.message}>
@@ -221,7 +221,7 @@ export function ValuationForm() {
                   </div>
 
                   {status === "error" && serverError && (
-                    <p className="mt-4 rounded-sm border border-red-500/40 bg-red-500/10 px-4 py-3 text-sm text-red-300">
+                    <p className="mt-4 rounded-sm border border-red-500/40 bg-red-500/10 px-4 py-3 text-sm text-red-700">
                       {serverError}{" "}
                       <a
                         href={waMessage}
@@ -245,7 +245,7 @@ export function ValuationForm() {
                       <ArrowIcon className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
                     )}
                   </button>
-                  <p className="mt-4 text-xs text-ivory/40">
+                  <p className="mt-4 text-xs text-ink/40">
                     By submitting you agree to be contacted about your quote. We
                     never sell your data.
                   </p>
@@ -255,19 +255,19 @@ export function ValuationForm() {
           </div>
           {/* Left column — pitch + WhatsApp alternative */}
           <div className="lg:col-span-5">
-            <p className="label-mono text-accent">04 — Instant valuation</p>
+            <p className="label-mono text-accent-ink">04 — Instant valuation</p>
             <h2 className="font-display mt-3 text-4xl leading-[0.95] sm:text-5xl lg:text-6xl">
               Get your number in 60 seconds.
             </h2>
-            <p className="mt-5 max-w-md text-ivory/65">
+            <p className="mt-5 max-w-md text-ink/65">
               Fill this in and our team sends a confirmed quote over WhatsApp,
               then we arrange free doorstep pickup. No account, no spam, no
               obligation.
             </p>
 
-            <div className="mt-8 border border-ivory/12 bg-ink-800 p-6">
-              <p className="label-mono text-ivory/45">Hate forms?</p>
-              <p className="mt-2 text-ivory/80">
+            <div className="mt-8 border border-ink/12 bg-sand p-6">
+              <p className="label-mono text-ink/45">Hate forms?</p>
+              <p className="mt-2 text-ink/80">
                 Send us a message and a photo of your phone — we&rsquo;ll quote
                 you right there in the chat.
               </p>
@@ -275,7 +275,7 @@ export function ValuationForm() {
                 href={waMessage}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center gap-2 rounded-sm border border-accent bg-accent/10 px-4 py-3 text-sm font-semibold text-accent transition-colors hover:bg-accent hover:text-ink"
+                className="mt-4 inline-flex items-center gap-2 rounded-sm border border-accent/80 bg-accent px-4 py-3 text-sm font-semibold text-ink transition-colors hover:bg-accent hover:text-ink"
               >
                 <WhatsappIcon className="h-4 w-4" />
                 Quote me on WhatsApp instead
@@ -292,7 +292,7 @@ export function ValuationForm() {
 }
 
 const inputCls =
-  "w-full rounded-sm border border-ivory/15 bg-ink px-4 py-3 text-ivory placeholder:text-ivory/30 outline-none transition-colors focus:border-accent";
+  "w-full rounded-sm border border-ink/15 bg-paper px-4 py-3 text-ink placeholder:text-ink/30 outline-none transition-colors focus:border-accent";
 
 function Field({
   label,
@@ -307,12 +307,12 @@ function Field({
 }) {
   return (
     <label className="mb-5 block last:mb-0">
-      <span className="label-mono mb-2 flex items-center gap-2 text-ivory/55">
+      <span className="label-mono mb-2 flex items-center gap-2 text-ink/55">
         {label}
-        {optional && <span className="text-ivory/30">(optional)</span>}
+        {optional && <span className="text-ink/30">(optional)</span>}
       </span>
       {children}
-      {error && <span className="mt-1.5 block text-xs text-red-400">{error}</span>}
+      {error && <span className="mt-1.5 block text-xs text-red-700">{error}</span>}
     </label>
   );
 }
@@ -333,8 +333,8 @@ function Chip({
       className={cn(
         "rounded-sm border px-4 py-3 text-sm font-semibold transition-colors",
         active
-          ? "border-accent bg-accent/10 text-accent"
-          : "border-ivory/15 text-ivory/80 hover:border-ivory/40",
+          ? "border-accent bg-accent/10 text-accent-ink"
+          : "border-ink/15 text-ink/80 hover:border-ink/40",
       )}
     >
       {children}
@@ -357,7 +357,7 @@ function SuccessState({ onReset }: { onReset: () => void }) {
       <h3 className="font-display mt-6 text-4xl sm:text-5xl">
         Request received.
       </h3>
-      <p className="mt-4 max-w-md text-ivory/70">
+      <p className="mt-4 max-w-md text-ink/70">
         Our team is on it. Expect a WhatsApp message with your confirmed quote
         shortly — usually within a few minutes during working hours.
       </p>
@@ -374,7 +374,7 @@ function SuccessState({ onReset }: { onReset: () => void }) {
         <button
           type="button"
           onClick={onReset}
-          className="rounded-sm border border-ivory/20 px-5 py-3 text-sm font-semibold text-ivory hover:border-ivory"
+          className="rounded-sm border border-ink/20 px-5 py-3 text-sm font-semibold text-ink hover:border-ink"
         >
           Submit another phone
         </button>

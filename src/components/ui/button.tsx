@@ -10,8 +10,8 @@ const styles: Record<Variant, string> = {
   accent:
     "bg-accent text-ink hover:bg-accent-600 border border-accent hover:border-accent-600",
   outline:
-    "bg-transparent text-ivory border border-ivory/25 hover:border-ivory hover:bg-ivory/5",
-  ghost: "bg-transparent text-ivory hover:text-accent border border-transparent",
+    "bg-transparent text-ink border border-ink/25 hover:border-ink hover:bg-ink/5",
+  ghost: "bg-transparent text-ink hover:text-accent-ink border border-transparent",
 };
 
 /**

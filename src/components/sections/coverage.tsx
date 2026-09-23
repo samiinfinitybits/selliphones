@@ -7,15 +7,15 @@ import { dubaiAreas, emirates } from "@/lib/site";
 
 export function Coverage() {
   return (
-    <section className="border-t border-ivory/10 bg-ink-800 py-20 sm:py-28">
+    <section className="border-t border-ink/10 bg-sand py-20 sm:py-28">
       <Container>
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <p className="label-mono text-accent">05 — Coverage</p>
+            <p className="label-mono text-accent-ink">05 — Coverage</p>
             <Reveal as="h2" className="font-display mt-3 text-4xl sm:text-5xl">
               We come to your door.
             </Reveal>
-            <p className="mt-5 text-ivory/60">
+            <p className="mt-5 text-ink/60">
               Free pickup across Dubai, 7 days a week. Elsewhere in the Emirates?
               We&rsquo;re expanding — message us and we&rsquo;ll sort it out.
             </p>
@@ -23,7 +23,7 @@ export function Coverage() {
               {emirates.map((e) => (
                 <li
                   key={e}
-                  className="label-mono rounded-sm border border-ivory/15 px-3 py-1.5 text-[0.62rem] text-ivory/55"
+                  className="label-mono rounded-sm border border-ink/15 bg-surface px-3 py-1.5 text-[0.62rem] text-ink/55"
                 >
                   {e}
                 </li>
@@ -31,7 +31,6 @@ export function Coverage() {
             </ul>
           </div>
 
-          {/* Area tag cloud — varied sizing for editorial tension */}
           <div className="lg:col-span-8">
             <div className="flex flex-wrap items-baseline gap-x-6 gap-y-3">
               {dubaiAreas.map((area, i) => (
@@ -43,13 +42,13 @@ export function Coverage() {
                     i % 3 === 0
                       ? "text-3xl sm:text-5xl"
                       : i % 3 === 1
-                        ? "text-2xl text-ivory/70 sm:text-3xl"
-                        : "text-xl text-ivory/45 sm:text-2xl"
+                        ? "text-2xl text-ink/70 sm:text-3xl"
+                        : "text-xl text-ink/45 sm:text-2xl"
                   }`}
                 >
                   <span className="inline-flex items-center gap-2">
                     {i % 4 === 0 && (
-                      <PinIcon className="h-4 w-4 text-accent sm:h-5 sm:w-5" />
+                      <PinIcon className="h-4 w-4 text-accent-ink sm:h-5 sm:w-5" />
                     )}
                     {area}
                   </span>

@@ -15,13 +15,12 @@ export default function OpengraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#0b0b0d",
-          color: "#f4f0e7",
+          background: "#f6f2e8",
+          color: "#14140f",
           padding: "72px",
           fontFamily: "sans-serif",
         }}
       >
-        {/* Brand */}
         <div
           style={{
             display: "flex",
@@ -29,14 +28,13 @@ export default function OpengraphImage() {
             gap: 16,
             fontSize: 30,
             letterSpacing: 4,
-            color: "#c8fa4b",
+            color: "#4a6b12",
           }}
         >
           <div style={{ display: "flex", width: 20, height: 20, background: "#c8fa4b" }} />
           <div style={{ display: "flex" }}>SELLIPHONES.AE</div>
         </div>
 
-        {/* Headline */}
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ display: "flex", fontSize: 100, fontWeight: 800, lineHeight: 1 }}>
             Old phone in,
@@ -48,7 +46,7 @@ export default function OpengraphImage() {
                 fontSize: 100,
                 fontWeight: 800,
                 lineHeight: 1,
-                color: "#0b0b0d",
+                color: "#14140f",
                 background: "#c8fa4b",
                 padding: "4px 16px",
               }}
@@ -58,8 +56,7 @@ export default function OpengraphImage() {
           </div>
         </div>
 
-        {/* Footline */}
-        <div style={{ display: "flex", gap: 24, fontSize: 28, color: "#8a877e" }}>
+        <div style={{ display: "flex", gap: 24, fontSize: 28, color: "#5b5648" }}>
           <div style={{ display: "flex" }}>Free doorstep pickup · Dubai</div>
           <div style={{ display: "flex" }}>·</div>
           <div style={{ display: "flex" }}>Paid on the spot</div>
