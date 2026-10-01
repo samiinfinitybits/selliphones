@@ -2,7 +2,7 @@
 
 /* ------------------------------------------------------------------ */
 /*  Selliphones.ae — design system (light theme)                      */
-/*  Warm paper/sand surfaces, ink type, acid-green CTAs, olive labels.  */
+/*  Warm paper/sand surfaces, ink type, soft blue CTAs & labels.         */
 /* ------------------------------------------------------------------ */
 
 @theme {
@@ -12,9 +12,11 @@
   --color-paper: #f6f2e8;
   --color-sand: #ece3d1;
   --color-surface: #ffffff;
-  --color-accent: #c8fa4b;
-  --color-accent-600: #b6e73a;
-  --color-accent-ink: #4a6b12;
+  --color-accent: #a85c32;
+
+  --color-accent-600: #8f4c27;
+  
+  --color-accent-ink: #572c14;
   --color-muted: #8a877e;
 
   /* Fonts (wired to next/font in layout.tsx) */

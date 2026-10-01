@@ -28,10 +28,10 @@ export default function OpengraphImage() {
             gap: 16,
             fontSize: 30,
             letterSpacing: 4,
-            color: "#4a6b12",
+            color: "#264f6a",
           }}
         >
-          <div style={{ display: "flex", width: 20, height: 20, background: "#c8fa4b" }} />
+          <div style={{ display: "flex", width: 20, height: 20, background: "#4d82b5" }} />
           <div style={{ display: "flex" }}>SELLIPHONES.AE</div>
         </div>
 
@@ -47,7 +47,7 @@ export default function OpengraphImage() {
                 fontWeight: 800,
                 lineHeight: 1,
                 color: "#14140f",
-                background: "#c8fa4b",
+                background: "#4d82b5",
                 padding: "4px 16px",
               }}
             >
